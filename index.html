@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxehome - contacts</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="rekvizit-block">
+        <div class="rb-left">
+        <h2>Реквизиты</h2>
+        <div class="rb-podzag">
+            <p>Название организации: Эминов Эмиль Мустафа Оглы</p>
+            <p>ИНН: 772311904447</p>
+            <span>ОГРНИП: 322774600380279</span>
+        </div>
+        </div>
+        <div class="rb-right">
+           <h2>г.Москва</h2>
+            <div class="rb-address">
+        <img src="images/geo-icon.svg" alt="geo">
+        <span>Нахимовский проспект 24 стр 1 ЦДиИ Экспострой павильон 3, стенд 138</span>
+    </div>
+    <div class="rb-address">
+        <img src="images/geo-icon.svg" alt="geo">
+        <span>Каширский двор, 19к1. 2 этаж, павильон 20</span>
+    </div>
+    <div id="rb-map" class="rb-map"></div>
+       </div>
+    </div>
+  <div class="cb-line-1"></div>
+  <div class="contact-block">
+    <span class="cb-v-line cb-v-1"></span>
+  <span class="cb-v-line cb-v-2"></span>
+  <span class="cb-line-anim-h"></span>
+  <span class="cb-line-anim-v cb-line-anim-v1"></span>
+  <span class="cb-line-anim-v cb-line-anim-v2"></span>
+    <div class="contact-info">
+  <h1>Контакты</h1>
+
+  <address class="contact-address">
+    <div class="c-mail">
+      <a class="c-link" href="mailto:Luxehome77@mail.ru">Luxehome77@mail.ru</a>
+    </div>
+
+    <div class="c-phone">
+      <a class="c-link" href="tel:+79670080019">8&nbsp;967&nbsp;008-00-19</a>
+    </div>
+
+    <div class="c-adress">
+      Нахимовский проспект 24 стр 1, ЦДиИ «Экспострой», павильон 3, стенд 138
+    </div>
+  </address>
+    <div class="cb-line-2"></div>
+</div>
+    <div class="contact-forma">
+      <form class="bb-form" method="post" action="">
+  <p class="bb-form-text">
+    Ответим на вопросы, уточним детали и расскажем,
+    как будет строиться работа
+  </p>
+  <div class="bb-field">
+  <input type="text" name="name" placeholder=" " required>
+  <label>Имя</label>
+</div>
+
+<div class="bb-field">
+  <input type="tel" name="phone" placeholder=" " required>
+  <label>Телефон</label>
+</div>
+<div class="bb-field">
+  <textarea name="comment" placeholder=" " rows="3"></textarea>
+  <label>Ваш комментарий</label>
+</div>
+  <button type="submit" class="bb-submit">
+    Отправить заявку
+  </button>
+</form>
+    </div>
+    <div class="contact-socials">
+      <a href="">
+        <img src="images/wa-black.svg" alt="Ссылка на наш WhatsApp" class="contact-soc-icon">
+      </a>
+      <a href="">
+        <img src="images/tg-black.svg" alt="Ссылка на наш Telegram" class="contact-soc-icon">
+      </a>
+    </div>
+    <div class="cb-line-3"></div>
+  </div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const hLine  = document.querySelector('.cb-line-anim-h');
+  const v1Line = document.querySelector('.cb-line-anim-v1');
+  const v2Line = document.querySelector('.cb-line-anim-v2');
+  const staticV2 = document.querySelector('.cb-v-2');
+
+  if (!hLine || !v1Line || !v2Line) return;
+
+  const hTotalWidth = 95.7;
+  const v1Pos = 44.5;
+  const v2Pos = 85.5;
+
+  let vHeightVW = 36.94; // desktop
+
+  /* =========================
+     📱 MOBILE 440px
+     ========================= */
+  if (window.innerWidth <= 440) {
+    const targetHeight = 57;
+    const scale = targetHeight / vHeightVW;
+    vHeightVW *= scale;
+
+    // 👇 синхронизация статичного элемента
+    if (staticV2) {
+      staticV2.style.height = '57vw';
+    }
+  }
+
+  const vSpeedMultiplier = 10;
+  const inertia = 0.16;
+
+  let targetH = 0;
+  let currentH = 0;
+  let targetV1 = 0;
+  let currentV1 = 0;
+  let targetV2 = 0;
+  let currentV2 = 0;
+
+  function updateTargets() {
+    const rect = hLine.getBoundingClientRect();
+    const windowH = window.innerHeight;
+
+    const start = windowH * 0.8;
+    const end   = windowH * 0.35;
+
+    let scrollProgress = (start - rect.top) / (start - end);
+    scrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+
+    targetH = scrollProgress * hTotalWidth;
+
+    if (targetH >= v1Pos) {
+      let vProgress1 =
+        (scrollProgress - v1Pos / hTotalWidth) * vSpeedMultiplier;
+      vProgress1 = Math.min(Math.max(vProgress1, 0), 1);
+      targetV1 = vProgress1 * vHeightVW;
+    } else {
+      targetV1 = 0;
+    }
+
+    if (targetH >= v2Pos) {
+      let vProgress2 =
+        (scrollProgress - v2Pos / hTotalWidth) * vSpeedMultiplier;
+      vProgress2 = Math.min(Math.max(vProgress2, 0), 1);
+      targetV2 = vProgress2 * vHeightVW;
+    } else {
+      targetV2 = 0;
+    }
+  }
+
+  function animate() {
+    currentH += (targetH - currentH) * inertia;
+    hLine.style.width = `${currentH}vw`;
+
+    currentV1 += (targetV1 - currentV1) * inertia;
+    v1Line.style.height = `${currentV1}vw`;
+
+    currentV2 += (targetV2 - currentV2) * inertia;
+    v2Line.style.height = `${currentV2}vw`;
+
+    requestAnimationFrame(animate);
+  }
+
+  window.addEventListener('scroll', updateTargets);
+  updateTargets();
+  animate();
+
+});
+</script>
+
+<script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
+
+<script>
+  ymaps.ready(init);
+
+  function init() {
+    const map = new ymaps.Map('rb-map', {
+      center: [55.751244, 37.618423], // Москва 
+      zoom: 10,
+      controls: [] 
+    });
+
+    // Координаты точек 
+    const points = [
+      {
+        coords: [55.6723, 37.5849], // Нахимовский проспект 24 стр 1 (примерно)
+        hint: 'Экспострой, павилион 3, стенд 138',
+        balloon: 'Нахимовский проспект 24 стр 1<br>ЦДиИ Экспострой, павилион 3, стенд 138'
+      },
+      {
+        coords: [55.664813, 37.632232], // Каширский двор (примерно)
+        hint: 'Каширский двор, павильон 20',
+        balloon: 'Каширский двор, 19к1<br>2 этаж, павильон 20'
+      }
+    ];
+
+    const geoObjects = [];
+
+    points.forEach(p => {
+      const placemark = new ymaps.Placemark(
+        p.coords,
+        { hintContent: p.hint, balloonContent: p.balloon },
+        { preset: 'islands#redIcon' } // можно заменить на кастомную иконку
+      );
+      geoObjects.push(placemark);
+      map.geoObjects.add(placemark);
+    });
+
+    // Авто-центрирование карты по двум точкам
+    const bounds = ymaps.geoQuery(geoObjects).getBounds();
+    if (bounds) {
+      map.setBounds(bounds, { checkZoomRange: true, zoomMargin: 40 });
+    }
+
+    // чтобы скролл страницы не зумил карту колесом 
+    map.behaviors.disable('scrollZoom');
+  }
+</script>
+
+</body>
+</html>

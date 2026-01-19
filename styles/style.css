@@ -1,0 +1,691 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nothing+You+Could+Do&display=swap');
+
+:root {
+    --montserrat: "Montserrat", sans-serif;
+    --nycd: "Nothing You Could Do", sans-serif;
+}
+
+body {
+    margin: 0;
+  padding: 0;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    font-family: var(--montserrat);
+}
+
+.rekvizit-block {
+    display: flex;
+    gap: 30vw;
+    margin-bottom: 1vw;
+}
+
+.rb-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-left h2 {
+    font-size: 4vw;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    margin-left: 2.06vw;
+    margin-bottom: 21vw;
+}
+
+.rb-podzag p {
+    font-size: 1vw;
+    font-weight: 400;
+    color: #131313;
+    line-height: 155.5%;
+    letter-spacing: -0.02em;
+    margin-left: 2.13vw;
+}
+
+.rb-podzag span {
+    font-size: 1vw;
+    font-weight: 400;
+    color: #131313;
+    line-height: 155.5%;
+    letter-spacing: -0.02em;
+    margin-left: 2.13vw;
+}
+
+.rb-right h2 {
+    font-size: 1vw;
+    font-weight: 500;
+    margin-top: 3.9vw;
+    margin-bottom: 1.5vw;
+}
+
+.rb-address {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    margin-bottom: 1.44vw;
+}
+
+.rb-address img {
+    width: 1.13vw;
+    height: 1.44vw;
+    flex-shrink: 0;
+}
+
+.rb-address span {
+    font-size: 0.88vw;
+    font-weight: 400;
+    line-height: 144.8%;
+    width: 20vw;
+}
+
+.rb-map{
+  width: 37.13vw;         
+  height: 21.19vw;       
+  margin-top: 3.81vw;
+  border-radius: 0.8vw;
+  overflow: hidden;     
+}
+
+
+
+
+.cb-line-1{
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    margin-bottom: 2.06vw;
+    width: 100%;
+    height: 1px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+}
+
+.cb-line-2{
+  display: none;
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    margin-bottom: 2.06vw;
+    width: 100%;
+    height: 1px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+}
+
+.cb-line-3{
+  display: none;
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    margin-bottom: 2.06vw;
+    width: 100%;
+    height: 1px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+}
+
+.contact-block {
+  position: relative;
+  display: flex;
+  margin-bottom: 5vw;
+}
+
+.cb-v-line {
+  position: absolute;
+  top: 0;                /* начинается от горизонтальной */
+  bottom: 0;             /* идёт вниз по блоку */
+  width: 1px;
+  background-color: #E7E7E7;
+}
+
+.cb-v-1 {
+  left: 44.5vw;
+  height: 36.94vw;
+}
+
+.cb-v-2 {
+  left: 85.5vw;
+  height: 36.94vw;
+}
+
+/* горизонтальная анимируемая линия */
+.cb-line-anim-h {
+  position: absolute;
+  top: 0;                /* совпадает с cb-line-1 */
+  left: 0vw;          /* старт с твоего margin-left */
+  height: 1px;
+  width: 0;               /* стартовая ширина */
+  background-color: #CACACA;
+  z-index: 10;            /* поверх серой линии */
+}
+
+/* вертикальные анимируемые линии (ветки вниз) */
+.cb-line-anim-v {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 0;              /* стартовая высота */
+  background-color: #CACACA;
+  z-index: 10;            /* поверх серых вертикалей */
+}
+
+.cb-line-anim-v1 { left: 44.5vw; }
+.cb-line-anim-v2 { left: 85.5vw; }
+
+
+.contact-info {
+  margin-right: 15vw;
+  margin-bottom: 25vw;
+}
+
+.contact-info h1 {
+  padding-top: 0.5vw;
+  padding-left: 2.09vw;
+  margin-top: 0;
+  margin-bottom: 10vw;
+  font-family: var(--montserrat);
+  font-size: 6vw;
+  font-weight: 500;
+}
+
+.c-mail,
+.c-phone {
+  padding-left: 2.13vw;
+  font-family: var(--montserrat);
+  font-size: 1vw;
+  font-weight: 500;
+  margin-bottom: 0.75vw;
+}
+
+.c-adress {
+  padding-left: 2.13vw;
+  font-family: var(--montserrat);
+  font-size: 0.88vw;
+  font-weight: 400;
+  width: 20vw;
+  margin-top: 4vw;
+}
+
+.contact-address {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.c-link {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.c-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.06vw;
+  background-color: #131313;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.c-link:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-forma {
+  margin-right: 9vw;
+}
+
+.bb-form {
+  padding-top: 0.5vw;
+  width: 32vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  font-family: var(--montserrat);
+}
+
+.bb-form-text {
+  width: 26vw;
+  margin-bottom: 0;
+  margin-top: 0;
+    padding-top: 1.5vw;
+    font-size: 1vw;
+    line-height: 150%;
+    color: #000000;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+/* поля */
+.bb-field {
+  position: relative;
+}
+
+.bb-field input {
+  width: 19.13vw;
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 0.6vw 0;
+  font-size: 0.95vw;
+  outline: none;
+  background: transparent;
+  font-family: var(--montserrat);
+}
+
+.bb-field label {
+  position: absolute;
+  left: 0;
+  top: 0.6vw;
+  font-size: 1vw;
+  color: #727272;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* анимация label */
+.bb-field input:not(:placeholder-shown) + label {
+  opacity: 0;
+}
+
+.bb-field textarea {
+  width: 19.13vw;
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 0.6vw 0;
+  font-size: 0.95vw;
+  outline: none;
+  background: transparent;
+  font-family: var(--montserrat);
+  resize: none;
+  line-height: 50%;
+}
+
+/* та же анимация label */
+.bb-field textarea:not(:placeholder-shown) + label {
+  opacity: 0;
+}
+
+
+/* кнопка */
+.bb-submit {
+  margin-top: 1.5vw;
+  align-self: flex-start;
+  padding: 0.8vw 2.4vw;
+  font-size: 0.95vw;
+  background: transparent;
+  border: 1px solid #000;
+  border-radius: 2vw;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.bb-submit:hover {
+  background: #000;
+  color: #fff;
+}
+
+.contact-socials {
+  padding-top: 2vw;
+      display: flex;
+    gap: 0.69vw;
+}
+
+.contact-socials a {
+  text-decoration: none;
+}
+
+.contact-soc-icon {
+  width: 1.75vw;
+}
+
+
+@media (max-width: 440px) {
+  .rekvizit-block {
+    display: block;
+    gap: 30vw;
+    margin-bottom: 1vw;
+}
+
+.rb-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-left h2 {
+    font-size: 5.45vw;
+    font-weight: 500;
+    letter-spacing: -0.03em;
+    margin-left: 6.14vw;
+    margin-bottom: 3vw;
+}
+
+.rb-podzag p {
+    font-size: 3.64vw;
+    font-weight: 400;
+    color: #131313;
+    line-height: 155.5%;
+    letter-spacing: -0.02em;
+    margin-left: 6.14vw;
+    width: 55vw;
+    margin-bottom: 0;
+        margin-top: 5vw;
+}
+
+.rb-podzag span {
+    font-size: 3.64vw;
+    font-weight: 400;
+    color: #131313;
+    line-height: 155.5%;
+    letter-spacing: -0.02em;
+    margin-left: 6.14vw;
+    width: 55vw;
+}
+
+.rb-right h2 {
+    font-size: 3.64vw;
+    font-weight: 500;
+    margin-top: 3.9vw;
+    margin-bottom: 3vw;
+    margin-left: 6.14vw;
+    transform: translateY(67vw);
+}
+
+.rb-address {
+    display: flex;
+        align-items: center;
+        gap: 3.64vw;
+        margin-bottom: 4vw;
+        margin-left: 6.14vw;
+        transform: translateY(69vw);
+}
+
+.rb-address img {
+    width: 4.09vw;
+    height: 5.23vw;
+    flex-shrink: 0;
+}
+
+.rb-address span {
+    font-size: 3.18vw;
+    font-weight: 400;
+    line-height: 144.8%;
+    width: 71vw;
+}
+
+.rb-map{
+  width: 85.23vw;         
+  height: 48.64vw;       
+  margin-top: 3.81vw;
+  border-radius: 0.8vw;
+  overflow: hidden;   
+  margin-left: 6.14vw;
+  transform: translateY(-19vw);  
+}
+
+
+.cb-line-1{
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    margin-bottom: 2.06vw;
+    width: 100%;
+    height: 1px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+    transform: translateY(23vw);
+}
+
+.cb-line-2{
+  display: block;
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    margin-bottom: 2.06vw;
+    width: 100%;
+    height: 1px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+    transform: translateY(12vw);
+}
+
+.cb-line-3{
+  display:block;
+    position: absolute;
+    margin-left: 0vw;
+    margin-top: 0vw;
+    margin-bottom: 2.06vw;
+    width: 100%;
+    height: 1px;
+    background-color: #E7E7E7;
+    overflow: hidden;
+    transform: translateY(168vw);
+}
+
+.contact-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10vw;
+  margin-top: 24vw;
+}
+
+.cb-v-line {
+  position: absolute;
+  top: 0;                /* начинается от горизонтальной */
+  bottom: 0;             /* идёт вниз по блоку */
+  width: 1px;
+  background-color: #E7E7E7;
+}
+
+.cb-v-1 {
+  left: 44.5vw;
+  display: none;
+}
+
+.cb-v-2 {
+  left: 85.5vw;
+}
+
+/* горизонтальная анимируемая линия */
+.cb-line-anim-h {
+  position: absolute;
+  top: 0;                /* совпадает с cb-line-1 */
+  left: 0vw;          /* старт с твоего margin-left */
+  height: 1px;
+  width: 0;               /* стартовая ширина */
+  background-color: #CACACA;
+  z-index: 10;            /* поверх серой линии */
+}
+
+/* вертикальные анимируемые линии (ветки вниз) */
+.cb-line-anim-v {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 0;              /* стартовая высота */
+  background-color: #CACACA;
+  z-index: 10;            /* поверх серых вертикалей */
+}
+
+.cb-line-anim-v1 { left: 44.5vw; display: none;}
+.cb-line-anim-v2 { left: 85.5vw; }
+
+
+.contact-info {
+  margin-right: 15vw;
+  margin-bottom: 19vw;
+}
+
+.contact-info h1 {
+  padding-top: 7.95vw;
+  padding-left: 6.14vw;
+  margin-top: 0;
+  margin-bottom: 5vw;
+  font-family: var(--montserrat);
+  font-size: 5.45vw;
+  font-weight: 500;
+}
+
+.c-mail,
+.c-phone {
+  padding-left: 6.14vw;
+  font-family: var(--montserrat);
+  font-size: 3.64vw;
+  font-weight: 500;
+  margin-bottom: 0.75vw;
+}
+
+.c-adress {
+  padding-left: 6.14vw;
+  font-family: var(--montserrat);
+  font-size: 3.18vw;
+  font-weight: 400;
+  width: 64vw;
+  margin-top: 8vw;
+}
+
+.contact-address {
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.c-link {
+  position: relative;
+  display: inline-block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.c-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.06vw;
+  background-color: #131313;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.c-link:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-forma {
+  margin-right: 9vw;
+}
+
+.bb-form {
+  margin-left: 6.14vw;
+  padding-top: 0.5vw;
+  width: 93vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  font-family: var(--montserrat);
+}
+
+.bb-form-text {
+  width: 72vw;
+  margin-bottom: 5vw;
+  margin-top: 0;
+    padding-top: 1.5vw;
+    font-size: 3.64vw;
+    line-height: 150%;
+    color: #000000;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+}
+
+/* поля */
+.bb-field {
+  position: relative;
+}
+
+.bb-field input {
+  width: 69.55vw;
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 0.6vw 0;
+  font-size: 3.64vw;
+  outline: none;
+  background: transparent;
+  font-family: var(--montserrat);
+  margin-bottom: 2vw;
+}
+
+.bb-field textarea {
+  width: 69.55vw;
+  border: none;
+  border-bottom: 1px solid #BDBDBD;
+  padding: 0.6vw 0;
+  font-size: 3.64vw;
+  outline: none;
+  background: transparent;
+  font-family: var(--montserrat);
+  resize: none;
+  line-height: 100%;
+}
+
+.bb-field label {
+  position: absolute;
+  left: 0;
+  top: 0.6vw;
+  font-size: 3.64vw;
+  color: #727272;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  pointer-events: none;
+  transition: 0.3s ease;
+}
+
+/* анимация label */
+.bb-field input:not(:placeholder-shown) + label {
+  opacity: 0;
+}
+
+/* кнопка */
+.bb-submit {
+  margin-top: 12vw;
+        align-self: flex-start;
+        padding: 1.2vw 5.4vw;
+        font-size: 3.64vw;
+        background: transparent;
+        border: 1px solid #000;
+        border-radius: 5vw;
+        cursor: pointer;
+        transition: 0.3s ease;
+}
+
+.bb-submit:hover {
+  background: #000;
+  color: #fff;
+}
+
+.contact-socials {
+  padding-top: 17.95vw;
+    display: flex;
+    gap: 2.5vw;
+    justify-content: flex-end;
+    padding-right: 8.86vw;
+}
+
+.contact-socials a {
+  text-decoration: none;
+}
+
+.contact-soc-icon {
+  width: 6.36vw;
+}
+
+
+}

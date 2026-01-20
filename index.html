@@ -108,13 +108,13 @@ document.addEventListener('DOMContentLoaded', () => {
      📱 MOBILE 440px
      ========================= */
   if (window.innerWidth <= 440) {
-    const targetHeight = 57;
+    const targetHeight = 71.5;
     const scale = targetHeight / vHeightVW;
     vHeightVW *= scale;
 
     // 👇 синхронизация статичного элемента
     if (staticV2) {
-      staticV2.style.height = '57vw';
+      staticV2.style.height = '71.5vw';
     }
   }
 

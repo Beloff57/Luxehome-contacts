@@ -194,6 +194,7 @@ body {
   font-size: 1vw;
   font-weight: 500;
   margin-bottom: 0.75vw;
+  letter-spacing: -0.02em;
 }
 
 .c-adress {
@@ -268,12 +269,21 @@ body {
 .bb-field input {
   width: 19.13vw;
   border: none;
-  border-bottom: 1px solid #BDBDBD;
   padding: 0.6vw 0;
   font-size: 0.95vw;
   outline: none;
-  background: transparent;
+  background-color: transparent;
   font-family: var(--montserrat);
+  --line-h: 1px;
+  background-image: linear-gradient(
+    to right,
+    #BDBDBD 0%,
+    #BDBDBD 82%,
+    rgba(189, 189, 189, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% var(--line-h);
+  background-position: left bottom;
 }
 
 .bb-field label {
@@ -296,14 +306,23 @@ body {
 .bb-field textarea {
   width: 19.13vw;
   border: none;
-  border-bottom: 1px solid #BDBDBD;
   padding: 0.6vw 0;
   font-size: 0.95vw;
   outline: none;
   background: transparent;
   font-family: var(--montserrat);
   resize: none;
-  line-height: 50%;
+  line-height: normal;
+  --line-h: 1px;
+  background-image: linear-gradient(
+    to right,
+    #BDBDBD 0%,
+    #BDBDBD 82%,
+    rgba(189, 189, 189, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% var(--line-h);
+  background-position: left bottom;
 }
 
 /* та же анимация label */
@@ -316,13 +335,16 @@ body {
 .bb-submit {
   margin-top: 1.5vw;
   align-self: flex-start;
-  padding: 0.8vw 2.4vw;
+  padding: 0.615vw 3.236vw;
   font-size: 0.95vw;
   background: transparent;
   border: 1px solid #000;
   border-radius: 2vw;
   cursor: pointer;
   transition: 0.3s ease;
+  font-weight: 500;
+  line-height: 114.2%;
+  letter-spacing: -0.03em;
 }
 
 .bb-submit:hover {
@@ -614,26 +636,44 @@ body {
 .bb-field input {
   width: 69.55vw;
   border: none;
-  border-bottom: 1px solid #BDBDBD;
-  padding: 0.6vw 0;
+  padding: 0.5vw 0 1.5vw 1.59vw;
   font-size: 3.64vw;
   outline: none;
   background: transparent;
   font-family: var(--montserrat);
   margin-bottom: 2vw;
+  --line-h: 1px;
+  background-image: linear-gradient(
+    to right,
+    #BDBDBD 0%,
+    #BDBDBD 82%,
+    rgba(189, 189, 189, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% var(--line-h);
+  background-position: left bottom;
 }
 
 .bb-field textarea {
   width: 69.55vw;
   border: none;
-  border-bottom: 1px solid #BDBDBD;
-  padding: 0.6vw 0;
+  padding: 0.5vw 0 1.5vw 1.59vw;
   font-size: 3.64vw;
   outline: none;
   background: transparent;
   font-family: var(--montserrat);
   resize: none;
-  line-height: 100%;
+  line-height: normal;
+  --line-h: 1px;
+  background-image: linear-gradient(
+    to right,
+    #BDBDBD 0%,
+    #BDBDBD 82%,
+    rgba(189, 189, 189, 0) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 100% var(--line-h);
+  background-position: left bottom;
 }
 
 .bb-field label {
@@ -646,6 +686,7 @@ body {
   letter-spacing: -0.04em;
   pointer-events: none;
   transition: 0.3s ease;
+  padding-left: 1.59vw;
 }
 
 /* анимация label */
@@ -657,7 +698,7 @@ body {
 .bb-submit {
   margin-top: 12vw;
         align-self: flex-start;
-        padding: 1.2vw 5.4vw;
+        padding: 2.13vw 11.05vw;
         font-size: 3.64vw;
         background: transparent;
         border: 1px solid #000;

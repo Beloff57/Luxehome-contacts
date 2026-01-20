@@ -15,13 +15,14 @@ body {
 
 .rekvizit-block {
     display: flex;
-    gap: 30vw;
-    margin-bottom: 1vw;
+    gap: 31.5vw;
+    margin-bottom: 2.44vw;
 }
 
 .rb-left {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .rb-left h2 {
@@ -39,6 +40,8 @@ body {
     line-height: 155.5%;
     letter-spacing: -0.02em;
     margin-left: 2.13vw;
+    margin-top: 0vw;
+    margin-bottom: 0.02vw;
 }
 
 .rb-podzag span {
@@ -53,7 +56,7 @@ body {
 .rb-right h2 {
     font-size: 1vw;
     font-weight: 500;
-    margin-top: 3.9vw;
+    margin-top: 4.2vw;
     margin-bottom: 1.5vw;
 }
 
@@ -181,7 +184,7 @@ body {
   padding-top: 0.5vw;
   padding-left: 2.09vw;
   margin-top: 0;
-  margin-bottom: 10vw;
+  margin-bottom: 15.13vw;
   font-family: var(--montserrat);
   font-size: 6vw;
   font-weight: 500;
@@ -204,6 +207,7 @@ body {
   font-weight: 400;
   width: 20vw;
   margin-top: 4vw;
+  line-height: 144.8%;
 }
 
 .contact-address {
@@ -245,13 +249,13 @@ body {
   width: 32vw;
   display: flex;
   flex-direction: column;
-  gap: 2vw;
+  gap: 0.63vw;
   font-family: var(--montserrat);
 }
 
 .bb-form-text {
   width: 26vw;
-  margin-bottom: 0;
+  margin-bottom: 2vw;
   margin-top: 0;
     padding-top: 1.5vw;
     font-size: 1vw;
@@ -269,7 +273,7 @@ body {
 .bb-field input {
   width: 19.13vw;
   border: none;
-  padding: 0.6vw 0;
+  padding: 0.95vw 0 0.75vw 0.44vw;
   font-size: 0.95vw;
   outline: none;
   background-color: transparent;
@@ -287,9 +291,10 @@ body {
 }
 
 .bb-field label {
+  padding-left: 0.44vw;
   position: absolute;
   left: 0;
-  top: 0.6vw;
+  top: 0.95vw;
   font-size: 1vw;
   color: #727272;
   font-weight: 300;
@@ -306,7 +311,7 @@ body {
 .bb-field textarea {
   width: 19.13vw;
   border: none;
-  padding: 0.6vw 0;
+  padding: 0.95vw 0 0.75vw 0.44vw;
   font-size: 0.95vw;
   outline: none;
   background: transparent;
@@ -333,10 +338,11 @@ body {
 
 /* кнопка */
 .bb-submit {
-  margin-top: 1.5vw;
+  font-family: var(--montserrat);
+  margin-top: 4vw;
   align-self: flex-start;
-  padding: 0.615vw 3.236vw;
-  font-size: 0.95vw;
+  padding: 0.587vw 2.463vw;
+  font-size: 1vw;
   background: transparent;
   border: 1px solid #000;
   border-radius: 2vw;
@@ -372,6 +378,7 @@ body {
     display: block;
     gap: 30vw;
     margin-bottom: 1vw;
+    padding-bottom: 4vw;
 }
 
 .rb-left {
@@ -384,7 +391,7 @@ body {
     font-weight: 500;
     letter-spacing: -0.03em;
     margin-left: 6.14vw;
-    margin-bottom: 3vw;
+    margin-bottom: 3.41vw;
 }
 
 .rb-podzag p {
@@ -396,7 +403,7 @@ body {
     margin-left: 6.14vw;
     width: 55vw;
     margin-bottom: 0;
-        margin-top: 5vw;
+        margin-top: 7.5vw;
 }
 
 .rb-podzag span {
@@ -441,7 +448,7 @@ body {
 }
 
 .rb-map{
-  width: 85.23vw;         
+  width: 87vw;         
   height: 48.64vw;       
   margin-top: 3.81vw;
   border-radius: 0.8vw;
@@ -473,7 +480,7 @@ body {
     height: 1px;
     background-color: #E7E7E7;
     overflow: hidden;
-    transform: translateY(12vw);
+    transform: translateY(15.91vw);
 }
 
 .cb-line-3{
@@ -486,7 +493,7 @@ body {
     height: 1px;
     background-color: #E7E7E7;
     overflow: hidden;
-    transform: translateY(168vw);
+    transform: translateY(198.54vw);
 }
 
 .contact-block {
@@ -548,7 +555,7 @@ body {
   padding-top: 7.95vw;
   padding-left: 6.14vw;
   margin-top: 0;
-  margin-bottom: 5vw;
+  margin-bottom: 6vw;
   font-family: var(--montserrat);
   font-size: 5.45vw;
   font-weight: 500;
@@ -560,7 +567,7 @@ body {
   font-family: var(--montserrat);
   font-size: 3.64vw;
   font-weight: 500;
-  margin-bottom: 0.75vw;
+  margin-bottom: 2.73vw;
 }
 
 .c-adress {
@@ -569,7 +576,7 @@ body {
   font-size: 3.18vw;
   font-weight: 400;
   width: 64vw;
-  margin-top: 8vw;
+  margin-top: 14.09vw;
 }
 
 .contact-address {
@@ -618,9 +625,9 @@ body {
 
 .bb-form-text {
   width: 72vw;
-  margin-bottom: 5vw;
+  margin-bottom: 11.64vw;
   margin-top: 0;
-    padding-top: 1.5vw;
+    padding-top: 7.5vw;
     font-size: 3.64vw;
     line-height: 150%;
     color: #000000;
@@ -636,7 +643,7 @@ body {
 .bb-field input {
   width: 69.55vw;
   border: none;
-  padding: 0.5vw 0 1.5vw 1.59vw;
+  padding: 0.5vw 0 2.95vw 1.59vw;
   font-size: 3.64vw;
   outline: none;
   background: transparent;
@@ -657,7 +664,7 @@ body {
 .bb-field textarea {
   width: 69.55vw;
   border: none;
-  padding: 0.5vw 0 1.5vw 1.59vw;
+  padding: 0.5vw 0 2.95vw 1.59vw;
   font-size: 3.64vw;
   outline: none;
   background: transparent;
@@ -696,9 +703,9 @@ body {
 
 /* кнопка */
 .bb-submit {
-  margin-top: 12vw;
+  margin-top: 17.73vw;
         align-self: flex-start;
-        padding: 2.13vw 11.05vw;
+        padding: 2.13vw 8.94vw;
         font-size: 3.64vw;
         background: transparent;
         border: 1px solid #000;

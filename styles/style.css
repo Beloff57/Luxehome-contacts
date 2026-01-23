@@ -317,7 +317,12 @@ body {
   background: transparent;
   font-family: var(--montserrat);
   resize: none;
-  line-height: normal;
+  line-height: 114.2%;
+  height: auto;              /* ← важно */
+  min-height: unset;         /* ← сбрасываем всё */
+  overflow-y: hidden;
+  box-sizing: border-box;
+ 
   --line-h: 1px;
   background-image: linear-gradient(
     to right,
@@ -493,7 +498,7 @@ body {
     height: 1px;
     background-color: #E7E7E7;
     overflow: hidden;
-    transform: translateY(192.91vw);
+    transform: translateY(196.91vw);
 }
 
 .contact-block {
@@ -650,7 +655,7 @@ body {
   outline: none;
   background: transparent;
   font-family: var(--montserrat);
-  margin-bottom: 2vw;
+  margin-bottom: 3.68vw;
   --line-h: 1px;
   background-image: linear-gradient(
     to right,

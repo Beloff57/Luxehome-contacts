@@ -227,6 +227,47 @@ document.addEventListener('DOMContentLoaded', () => {
     map.behaviors.disable('scrollZoom');
   }
 </script>
+<script>
+function initTextarea(textarea) {
+  const style = getComputedStyle(textarea);
+
+  const lineHeight = parseFloat(style.lineHeight);
+  const paddingTop = parseFloat(style.paddingTop);
+  const paddingBottom = parseFloat(style.paddingBottom);
+
+  const maxRows = 4;
+
+  const oneRowHeight = lineHeight + paddingTop + paddingBottom;
+  const maxHeight = lineHeight * maxRows + paddingTop + paddingBottom;
+
+  // 🔥 ЖЁСТКО: одна строка
+  textarea.style.height = oneRowHeight + 'px';
+  textarea.style.overflowY = 'hidden';
+
+  textarea.addEventListener('input', () => {
+    const lines = textarea.value.split('\n').length;
+    const rows = Math.min(lines, maxRows);
+
+    const newHeight =
+      lineHeight * rows + paddingTop + paddingBottom;
+
+    textarea.style.height = newHeight + 'px';
+    textarea.style.overflowY = lines > maxRows ? 'auto' : 'hidden';
+  });
+}
+
+// ⏳ ждём шрифты
+window.addEventListener('load', () => {
+  document.querySelectorAll('.bb-field textarea').forEach(initTextarea);
+});
+
+// 🔁 на ресайз (vw!)
+window.addEventListener('resize', () => {
+  document.querySelectorAll('.bb-field textarea').forEach(t => {
+    t.dispatchEvent(new Event('input'));
+  });
+});
+</script>
 
 </body>
 </html>
